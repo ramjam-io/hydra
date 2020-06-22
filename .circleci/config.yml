@@ -31,7 +31,7 @@ jobs:
           - TEST_DATABASE_POSTGRESQL=postgres://test:test@localhost:5432/postgres?sslmode=disable
           - TEST_DATABASE_MYSQL=mysql://root:test@(localhost:3306)/mysql?parseTime=true&multiStatements=true
           - TEST_DATABASE_COCKROACHDB=cockroach://root@localhost:26257/defaultdb?sslmode=disable
-      - image: postgres:9.6
+      - image: postgres:10.8
         environment:
           - POSTGRES_USER=test
           - POSTGRES_PASSWORD=test
@@ -39,7 +39,7 @@ jobs:
       - image: mysql:5.7
         environment:
           - MYSQL_ROOT_PASSWORD=test
-      - image: cockroachdb/cockroach:v2.1.6
+      - image: cockroachdb/cockroach:v20.1
         command: start --insecure
     working_directory: /go/src/github.com/ory/hydra
     steps:
@@ -72,12 +72,12 @@ jobs:
           - TEST_DATABASE_MYSQL=mysql://root:test@(localhost:3306)/mysql?parseTime=true&multiStatements=true
           - TEST_DATABASE_COCKROACHDB=cockroach://root@localhost:26257/defaultdb?sslmode=disable
           - TEST_DATABASE_POSTGRESQL=postgres://test:test@localhost:5432/postgres?sslmode=disable
-      - image: postgres:9.6
+      - image: postgres:10.8
         environment:
           - POSTGRES_USER=test
           - POSTGRES_PASSWORD=test
           - POSTGRES_DB=postgres
-      - image: cockroachdb/cockroach:v2.1.6
+      - image: cockroachdb/cockroach:v20.1
         command: start --insecure
       - image: mysql:5.7
         environment:
