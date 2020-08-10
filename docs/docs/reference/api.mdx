@@ -30,8 +30,10 @@ feel free to share them in a
 - HTTP Authentication, scheme: basic - OAuth 2.0 Authorization. - Flow:
   authorizationCode
 
-  - OAuth 2.0 Authorization URL = [/oauth2/auth](/oauth2/auth)
-  - OAuth 2.0 Token URL = [/oauth2/token](/oauth2/token)
+  - OAuth 2.0 Authorization URL =
+    [https://hydra.demo.ory.sh/oauth2/auth](https://hydra.demo.ory.sh/oauth2/auth)
+  - OAuth 2.0 Token URL =
+    [https://hydra.demo.ory.sh/oauth2/token](https://hydra.demo.ory.sh/oauth2/token)
   - OAuth 2.0 Scope
 
     | Scope          | Scope Description                                                            |
@@ -6728,10 +6730,11 @@ This endpoint revokes a subject's granted consent sessions for a specific OAuth
 
 #### Parameters
 
-| Parameter | In    | Type   | Required | Description                                                                                                            |
-| --------- | ----- | ------ | -------- | ---------------------------------------------------------------------------------------------------------------------- |
-| subject   | query | string | true     | The subject (Subject) who's consent sessions should be deleted.                                                        |
-| client    | query | string | false    | If set, deletes only those consent sessions by the Subject that have been granted to the specified OAuth 2.0 Client ID |
+| Parameter | In    | Type    | Required | Description                                                                                                            |
+| --------- | ----- | ------- | -------- | ---------------------------------------------------------------------------------------------------------------------- |
+| subject   | query | string  | true     | The subject (Subject) who's consent sessions should be deleted.                                                        |
+| client    | query | string  | false    | If set, deletes only those consent sessions by the Subject that have been granted to the specified OAuth 2.0 Client ID |
+| all       | query | boolean | false    | If set to `?all=true`, deletes all consent sessions by the Subject that have been granted.                             |
 
 #### Responses
 
